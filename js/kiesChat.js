@@ -16,8 +16,6 @@ fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/berichten' , {
 
 function getInfo(records) {
 
-
-
         let tijdstippen = new Array();
         for (let i = 0; i < records.length; i++) {
             tijdstippen[i] = records[i].fields.CreatedTime;

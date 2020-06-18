@@ -83,7 +83,7 @@ function getInfo(records) {
     let sorteer = tijdstippen.sort();
 
     for (let j = 0; j < records.length; j++) {
-        if (sorteer[records.length - 1] === records[j].fields.CreatedTime) {
+        if (sorteer[j] === records[j].fields.CreatedTime) {
             let is_ID = records[j].fields.ID;
             if (is_ID === 'USER_TEST') {
 

@@ -3,11 +3,11 @@ const navSlide = () => {
     const nav = document.querySelector('.nav-links');
 
     burger.addEventListener('click', () => {
-        burger.style.display = "block";
+        nav.classList.toggle('nav-active');
     });
     window.onclick = function(event) {
         if (event.target == burger) {
-            burger.style.display = "none";
+            nav.style.display = "none";
         }
     }
 }

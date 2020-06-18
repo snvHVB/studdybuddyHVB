@@ -90,7 +90,7 @@ function getInfo(records) {
                 '<span>' + naam + '</span>' +
                 '<p>' + message + '</p>' +
                 '<span class="time-right">' + time +'</span>';
-            div.className = 'darker';
+            div.className = 'container darker';
             document.getElementById('berichten').appendChild(div);
 
         }

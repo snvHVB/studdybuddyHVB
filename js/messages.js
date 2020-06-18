@@ -76,25 +76,30 @@ fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/berichten', {
 
 function getInfo(records) {
 
+    let tijdstippen = new Array();
     for (let i = 0; i < records.length; i++) {
-        let is_ID = records[i].fields.ID;
-        if (is_ID === 'USER_TEST') {
-
-            naam = records[i].fields.naam;
-            foto = records[i].fields.img;
-            message = records[i].fields.bericht;
-            time = records[i].fields.tijd;
-
-            let div = document.createElement('div');
-            div.innerHTML = '<img src="' + foto + '" alt="Avatar">' +
-                '<span>' + naam + '</span>' +
-                '<p>' + message + '</p>' +
-                '<span class="time-right">' + time +'</span>';
-            div.className = 'container';
-            document.getElementById('berichten').appendChild(div);
-
-        }
-
+        tijdstippen[i] = records[i].fields.CreatedTime;
     }
+    let sorteer = tijdstippen.sort();
 
+    for (let j = 0; j < records.length; j++) {
+        if (sorteer[records.length - 1] === records[j].fields.CreatedTime) {
+            let is_ID = records[j].fields.ID;
+            if (is_ID === 'USER_TEST') {
+
+                naam = records[j].fields.naam;
+                foto = records[j].fields.img;
+                message = records[j].fields.bericht;
+                time = records[j].fields.tijd;
+
+                let div = document.createElement('div');
+                div.innerHTML = '<img src="' + foto + '" alt="Avatar">' +
+                    '<span>' + naam + '</span>' +
+                    '<p>' + message + '</p>' +
+                    '<span class="time-right">' + time + '</span>';
+                div.className = 'container darker';
+                document.getElementById('berichten').appendChild(div);
+            }
+        }
+    }
 }

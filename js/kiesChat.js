@@ -25,15 +25,14 @@ function getInfo(records) {
 
             if (laatstemessageID < records[i].fields.messageID) {
                 laatstemessageID = records[i].fields.messageID;
+                naam = records[laatstemessageID].fields.naam;
+                foto = records[laatstemessageID].fields.img;
+                message = records[laatstemessageID].fields.bericht;
+                time = records[laatstemessageID].fields.tijd;
             }
 
         }
     }
-
-    naam = records[laatstemessageID].fields.naam;
-    foto = records[laatstemessageID].fields.img;
-    message = records[laatstemessageID].fields.bericht;
-    time = records[laatstemessageID].fields.tijd;
 
     let bericht = document.createElement('a');
     bericht.href = "chatpage.html"

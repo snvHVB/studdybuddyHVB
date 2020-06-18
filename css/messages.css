@@ -17,6 +17,11 @@ html{
   margin: 1rem 0;
 }
 
+div.container.darker{
+  width: 50%;
+  margin-left: auto;
+}
+
 /* Darker chat container */
 .darker {
   border-color: #ccc;

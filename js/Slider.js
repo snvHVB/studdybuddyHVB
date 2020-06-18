@@ -1,5 +1,5 @@
-let menu = document.getElementById('menu');
-let box = document.getElementById('hmbrg');
+let box = document.querySelector('.box');
+let menu = document.querySelector('.nav-links');
 let status = false;
 window.onclick = function(event){
     const nav = document.querySelector('.nav-links');

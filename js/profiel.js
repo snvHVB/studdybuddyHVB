@@ -10,6 +10,16 @@ let profielTekst = document.getElementById('profielTekst');
 let werkervaringTekst = document.getElementById('WerkervaringTekst');
 let contactTekst = document.getElementById('contactTekst');
 let edit = document.getElementById('edit');
+let categorieInfoBox = document.getElementsByClassName('categorieInfoBox');
+let categorieInfoBoxEdit = document.getElementsByClassName('categorieInfoBoxEdit');
+let userNaamEdit = document.getElementById('userNaamEdit');
+let profielTekstEdit = document.getElementById('profielTekstEdit');
+let werkervaringTekstEdit= document.getElementById('WerkervaringTekstEdit');
+let contactTekstEdit = document.getElementById('contactTekstEdit');
+let opslaanBox = document.getElementById('opslaanBox');
+let opslaan = document.getElementById('opslaan');
+let userNaamBox = document.getElementById('userNaamBox');
+let userNaamEditBox = document.getElementById('userNaamEditBox');
 
 window.addEventListener('load', () => {
 
@@ -59,6 +69,61 @@ window.addEventListener('load', () => {
     })
 
     edit.addEventListener("click", () => {
+        userNaamBox.style.display = 'none';
+        userNaamEditBox.style.display = 'flex';
+
+        for(let i = 0; i < categorieInfoBox.length; i++) {
+            categorieInfoBox[i].style.display = 'none';
+        }
+        for(let i = 0; i < categorieInfoBoxEdit.length; i++) {
+            categorieInfoBoxEdit[i].style.display = 'block';
+        }
+        opslaanBox.style.display = 'flex';
+    });
+
+    opslaan.addEventListener("click", () => {
+        let naam = userNaamEdit.value;
+        let profielbeschrijving = profielTekstEdit.value;
+        let werkervaring = werkervaringTekstEdit.value;
+        let contact = contactTekstEdit.value;
+
+        userNaam.innerHTML = naam;
+        profielTekst.innerHTML = profielbeschrijving;
+        werkervaringTekst.innerHTML  = werkervaring;
+        contactTekst.innerHTML  = contact;
+
+        let data = {
+            "records": [{
+                "id": "recAXEYE61fjmeKhl",
+                "fields": {
+                    "naam": naam,
+                    "profielbeschrijving": profielbeschrijving,
+                    "werkervaring": werkervaring,
+                    "contact": contact
+                }
+            }]
+        }
+        fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/profiel' , {
+            method: 'PATCH',
+            headers: {
+                'Authorization': 'Bearer keybA52rEqXKwKAAo',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(() => alert('opgeslaan'))
+
+        userNaamBox.style.display = 'block';
+        userNaamEditBox.style.display = 'none';
+
+        for(let i = 0; i < categorieInfoBox.length; i++) {
+            categorieInfoBox[i].style.display = 'block';
+        }
+        for(let i = 0; i < categorieInfoBoxEdit.length; i++) {
+            categorieInfoBoxEdit[i].style.display = 'none';
+        }
+        opslaanBox.style.display = 'none';
 
     });
 
@@ -86,7 +151,11 @@ window.addEventListener('load', () => {
         profielTekst.innerHTML  = profielbeschrijving;
         werkervaringTekst.innerHTML  = werkervaring;
         contactTekst.innerHTML  = contact;
+
+        userNaamEdit.value = naam
+        profielTekstEdit.value = profielbeschrijving;
+        werkervaringTekstEdit.value = werkervaring;
+        contactTekstEdit.value = contact;
     }
 
 });
-

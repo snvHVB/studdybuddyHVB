@@ -35,10 +35,15 @@ h1 {
     border: none;
     outline: none;
     background: linear-gradient(360deg, #FFB801 16.67%, rgba(255, 255, 255, 0) 88.33%), #FFE03D;
+    cursor: pointer;
 }
 
 #userNaam {
     margin-bottom: 1rem;
+}
+
+#userNaamEditBox {
+    display: none;
 }
 
 #profiel-kader {
@@ -66,7 +71,15 @@ section.categorie {
     border-right: solid 0.15rem #3E3E3E;
 }
 
-.categorie-info-box {
+.categorieInfoBox {
+    display: block;
+    width:  70%;
+    height: 10vh;
+    margin: 1rem;
+}
+
+.categorieInfoBoxEdit {
+    display: none;
     width:  70%;
     height: 10vh;
     margin: 1rem;
@@ -83,46 +96,43 @@ section.categorie {
     cursor: pointer;
 }
 
-ul{
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0rem;
-    margin-inline-end: 0rem;
-    padding-inline-start: 4rem;
-    background-color: white;
+.editBalk {
+    width: 100%;
+    height: 5vh;
+    background: #FFFFFF;
+    border: 0.1rem solid #E3E3E3;
+    box-sizing: border-box;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    outline: none;
 }
 
-ul li{
-    width: 90%;
-    border-bottom: black solid 1px;
-    margin: 0 auto;
-    margin-bottom: 5rem;
-    padding: 2rem;
-    padding-left: 0rem;
+.editBalkKlein {
+    width: 10vw;
+    height: 5vh;
+    background: #FFFFFF;
+    border: 0.1rem solid #E3E3E3;
+    box-sizing: border-box;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    outline: none;
+    margin: 1rem;
 }
 
-ul li a{
-    color: black;
-    margin: 2rem;
+#opslaanBox{
+    display: none;
+    justify-content: center;
+}
+
+#opslaan {
+    background: linear-gradient(360deg, #FFB801 16.67%, rgba(255, 255, 255, 0) 88.33%), #FFE03D;
+    border: none;
+    outline: none;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-active{
-    transform: translateX(0%);
-    left: 0%;
-}
-
-.nav-links {
-    right: 100%;
-    top: 0vh;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    transition: transform 0.5s ease-in;
-    z-index: 100;
-    position: fixed;
-    padding: 0rem;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: 0.75rem 4rem;
+    margin: 1rem;
 }

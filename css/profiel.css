@@ -137,10 +137,26 @@ section.categorie {
     margin: 1rem;
 }
 
-@media only screen and (max-width: 600rem) {
+@media only screen and (max-width: 70rem) {
 
     #wrapper {
         width: 50vw;
+    }
+
+}
+
+@media only screen and (max-width: 50rem) {
+
+    #wrapper {
+        width: 60vw;
+    }
+
+}
+
+@media only screen and (max-width: 30rem) {
+
+    #wrapper {
+        width: 70vw;
     }
 
 }

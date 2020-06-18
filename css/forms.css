@@ -203,6 +203,26 @@ main {
     height: 100vh;
 }
 
+.nav-active{
+    transform: translateX(0%);
+    left: 0%;
+
+}
+
+.nav-links {
+    right: 100%;
+    top: 0vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    transition: transform 0.5s ease-in;
+    z-index: 100;
+    position: fixed;
+    padding: 0rem;
+
+}
+
 @media screen and (max-width: 864px) {
     .content {
         width: 80%;

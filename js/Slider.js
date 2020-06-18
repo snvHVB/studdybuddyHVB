@@ -1,17 +1,9 @@
-let menu = document.getElementById('menu');
-let box = document.getElementById('hmbrg');
-let status = false;
-window.onclick = function(event){
+const navSlide = () => {
+    const burger = document.querySelector('.box');
     const nav = document.querySelector('.nav-links');
 
-    if (event.target == box){
+    burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
-        status = true;
-        console.log(status);
-    }else if (event.target != menu && status == true){
-        nav.classList.toggle('nav-active');
-        status = false;
-    }
-
-
+    });
 }
+navSlide();

@@ -136,3 +136,11 @@ section.categorie {
     padding: 0.75rem 4rem;
     margin: 1rem;
 }
+
+@media only screen and (max-width: 600rem) {
+
+    #wrapper {
+        width: 50vw;
+    }
+
+}

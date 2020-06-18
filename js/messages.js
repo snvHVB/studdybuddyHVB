@@ -84,6 +84,7 @@ function getInfo(records) {
 
     for (let j = 0; j < records.length; j++) {
         if (sorteer[j] === records[j].fields.CreatedTime) {
+            console.log('I exist');
             let is_ID = records[j].fields.ID;
             if (is_ID === 'USER_TEST') {
 

@@ -6,7 +6,7 @@ const navSlide = () => {
         nav.classList.toggle('nav-active');
     });
     window.onclick = function(event) {
-        if (event.target == burger) {
+        if (event.target != burger) {
             nav.style.display = "none";
         }
     }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedrijf toevoegen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+    <div class="column">
+        <header>
+            <nav>
+                <div class="box">
+                    <div class="hamburger"></div>
+                    <div class="hamburger"></div>
+                    <div class="hamburger"></div>
+                </div>
+                <img src="img/Logo.PNG" alt="logo" class="imgNav">
+                <a href="" id="message"><img src="img/message.PNG" alt="message" class="imgNav"></a>
+            </nav>
+            <div id="line"></div>
+        </header>
+        <main id="alsFormcheck">
+            <div class="content">
+                <br>
+                <form id='bedrijfsForm'>
+                    <br>
+                    <fieldset>
+                        <legend>Bedrijf toevoegen</legend>
+                        <br>
+                        <label>Naam</label>
+                        <input type="text" id="bedrijfsnaam" value="" required />
+                        <span class="message message--error" id="errBedrijfsnaam">&nbsp;</span>
+                        <br>
+                        <label>Locatie (stad bv. Gent)</label>
+                        <input type="text" id="locatie" value="" required />
+                        <span class="message message--error" id="errLocatie">&nbsp;</span>
+                        <br>
+                        <label>Soort vacature</label>
+                        <select id="soortVacature">
+                            <option selected="selected" value="">Kies...</option>
+                            <option value="Vaste job">Vaste job</option>
+                            <option value="Weekend- en vakantiejob">Weekend- en vakantiejob</option>
+                            <option value="Stages">Stages</option>
+                        </select>
+                        <span class="message message--error" id="errSoortVacature">&nbsp;</span>
+                        <br>
+                        <label>Kies een studierichting</label>
+                        <select id="studierichting">
+                            <option selected="selected" value="">Kies...</option>
+                            <option value="Alle studiegebieden">Alle studiegebieden</option>
+                            <option value="Algemeen secundair onderwijs (ASO)">Algemeen secundair onderwijs (ASO)
+                            </option>
+                            <option value="Auto">Auto</option>
+                            <option value="Bouw">Bouw</option>
+                            <option value="Carrosserie">Carrosserie</option>
+                            <option value="Chemie">Chemie</option>
+                            <option value="Decoratieve technieken">Decoratieve technieken</option>
+                            <option value="Fotografie">Fotografie</option>
+                            <option value="Glastechnieken">Glastechnieken</option>
+                            <option value="Grafische communicatie en media">Grafische communicatie en media</option>
+                            <option value="Handel - ICT">Handel - ICT</option>
+                            <option value="Horeca">Horeca</option>
+                            <option value="Hout">Hout</option>
+                            <option value="Juwelen">Juwelen</option>
+                            <option value="Koeling en warmte">Koeling en warmte</option>
+                            <option value="Kunst">Kunst</option>
+                            <option value="Land- en tuinbouw">Land- en tuinbouw</option>
+                            <option value="Lichaamsverzorging">Lichaamsverzorging</option>
+                            <option value="Logistiek">Logistiek</option>
+                            <option value="Maatschappelijke veiligheid">Maatschappelijke veiligheid</option>
+                            <option value="Maritieme opleidingen">Maritieme opleidingen</option>
+                            <option value="Mechanica-elektriciteit">Mechanica-elektriciteit</option>
+                            <option value="Mode">Mode</option>
+                            <option value="Muziekinstrumentenbouw">Muziekinstrumentenbouw</option>
+                            <option value="Optiek">Optiek</option>
+                            <option value="Orthopedische technieken">Orthopedische technieken</option>
+                            <option value="Personenzorg">Personenzorg</option>
+                            <option value="Sport">Sport</option>
+                            <option value="Tandtechnieken">Tandtechnieken</option>
+                            <option value="Textiel">Textiel</option>
+                            <option value="Toerisme">Toerisme</option>
+                            <option value="Voeding">Voeding</option>
+                        </select>
+                        <span class="message message--error" id="errStudierichting">&nbsp;</span>
+                        <br>
+                        <div id="displayed">
+                            <label>Loon (in €)</label>
+                            <input type="text" id="loon" value="" required />
+                            <span class="message message--error" id="errLoon">&nbsp;</span>
+                        </div>
+                        <br>
+                        <label>Functie (de job die men gaan uitvoeren)</label>
+                        <input type="text" id="functie" value="" required />
+                        <span class="message message--error" id="errFunctie">&nbsp;</span>
+                        <br>
+                        <label>Beschrijf de job</label>
+                        <textarea rows="4" cols="50" name="beschrijvingJob" form="bedrijfsForm"
+                            id="beschrijving"></textarea>
+                        <span class="message message--error" id="errBeschrijving">&nbsp;</span>
+                    </fieldset>
+                    <br>
+                    <br>
+                    <input type="submit" id="plaatsVacature" class="button cta-button" value="Plaats vacature">
+                    <br>
+                    <br>
+                </form>
+                <br>
+            </div>
+        </main>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <div class="box-container">
+                <div class="box-left">
+                    <span class="iconify social-media-icons" data-inline="false" data-icon="cib:facebook"></span>
+                    <span class="iconify social-media-icons" data-inline="false"
+                        data-icon="entypo-social:google-with-circle"></span>
+                    <span class="iconify social-media-icons" data-inline="false"
+                        data-icon="ant-design:twitter-circle-filled"></span>
+                    <span class="iconify social-media-icons" data-inline="false"
+                        data-icon="entypo-social:linkedin-with-circle"></span>
+                </div>
+                <div class="box-right">
+                    <p>Copyright &copy; 2020 HVB</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="js/addBedrijf.js"></script>
+</body>
+
+</html>

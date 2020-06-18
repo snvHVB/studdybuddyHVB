@@ -203,18 +203,6 @@ main {
     height: 100vh;
 }
 
-img.imgNav {
-    height: 5rem;
-    width: 5.25rem;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10vw;
-}
-
 ul{
     list-style-type: disc;
     margin-block-start: 1em;
@@ -241,17 +229,9 @@ ul li a{
     font-weight: bold;
 }
 
-div.hamburger {
-    width: 3.5rem;
-    height: 0.5rem;
-    background-color: #C4C4C4;
-    margin: 0.6rem 0;
-}
-
 .nav-active{
     transform: translateX(0%);
     left: 0%;
-
 }
 
 .nav-links {
@@ -265,7 +245,6 @@ div.hamburger {
     z-index: 100;
     position: fixed;
     padding: 0rem;
-
 }
 
 

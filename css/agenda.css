@@ -97,3 +97,47 @@ footer  {
   min-height: 5vh;
   background-color: #C4C4C4;
 }
+
+ul#menu{
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0rem;
+  margin-inline-end: 0rem;
+  padding-inline-start: 4rem;
+  background-color: white;
+}
+
+ul#menu li{
+  width: 90%;
+  border-bottom: black solid 1px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  padding-left: 0rem;
+}
+
+ul#menu li a{
+  color: black;
+  margin: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-active{
+  transform: translateX(0%);
+  left: 0%;
+}
+
+.nav-links {
+  right: 100%;
+  top: 0vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  transition: transform 0.5s ease-in;
+  z-index: 100;
+  position: fixed;
+  padding: 0rem;
+}

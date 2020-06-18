@@ -12,6 +12,4 @@ window.onclick = function(event){
         nav.classList.toggle('nav-active');
         status = false;
     }
-
-
 }

@@ -124,6 +124,7 @@ section.flex section.knoppen {
 
 section.flex section.knoppen img{
     padding-left: 2rem;
+    cursor: pointer;
 }
 
 section.flex section.knoppen button{

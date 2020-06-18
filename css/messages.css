@@ -87,6 +87,7 @@ a:visited {
   color: #FFE35B;
   width: 3em;
   height: 3em;
+  cursor: pointer;
 }
 #sender{
   background-color: white;

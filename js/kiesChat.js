@@ -25,6 +25,7 @@ function getInfo(records) {
 
             if (laatstemessageID < records[i].fields.messageID) {
                 laatstemessageID = records[i].fields.messageID;
+                laatstemessageID--;
                 naam = records[laatstemessageID].fields.naam;
                 foto = records[laatstemessageID].fields.img;
                 message = records[laatstemessageID].fields.bericht;

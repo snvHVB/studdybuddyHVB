@@ -16,21 +16,21 @@ fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/berichten' , {
 
 function getInfo(records) {
 
-        let tijdstippen = new Array();
-        for (let i = 0; i < records.length; i++) {
-            tijdstippen[i] = records[i].fields.CreatedTime;
-        }
-        let sorteer = tijdstippen.sort();
+        let laatstemessageID = 0;
 
-        for (let j = 0; j < records.length; j++) {
-            if (sorteer[records.length - 1] === records[j].fields.CreatedTime) {
-                let is_ID = records[j].fields.ID;
+        for (let i = 0; i < records.length; i++) {
+
+                let is_ID = records[i].fields.ID;
                 if (is_ID === 'USER_TEST') {
 
-                    naam = records[j].fields.naam;
-                    foto = records[j].fields.img;
-                    message = records[j].fields.bericht;
-                    time = records[j].fields.tijd;
+                    if (laatstemessageID < records[i].fields.messageID){
+                        laatstemessageID = records[i].fields.messageID;
+                    }
+
+                    naam = records[laatstemessageID].fields.naam;
+                    foto = records[laatstemessageID].fields.img;
+                    message = records[laatstemessageID].fields.bericht;
+                    time = records[laatstemessageID].fields.tijd;
 
                     let bericht = document.createElement('a');
                     bericht.href = "chatpage.html"
@@ -45,7 +45,7 @@ function getInfo(records) {
                 }
             }
         }
-}
+
 
 
 

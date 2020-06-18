@@ -38,6 +38,7 @@ div.hamburger {
     height: 0.5rem;
     background-color: #C4C4C4;
     margin: 0.6rem 0;
+    cursor: pointer;
 }
 
 img.imgNav {

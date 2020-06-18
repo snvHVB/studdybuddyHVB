@@ -1,5 +1,5 @@
-const box = document.querySelector('.box');
-const menu = document.querySelector('.nav-links');
+let menu = document.getElementById('menu');
+let box = document.getElementById('hmbrg');
 let status = false;
 window.onclick = function(event){
     const nav = document.querySelector('.nav-links');
@@ -12,4 +12,6 @@ window.onclick = function(event){
         nav.classList.toggle('nav-active');
         status = false;
     }
+
+
 }

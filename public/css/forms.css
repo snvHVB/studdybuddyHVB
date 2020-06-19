@@ -1,0 +1,317 @@
+/*Dries Fierens*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.contentFilter {
+    width: 40%;
+    margin-left: 30%;
+}
+
+.content #bedrijfsForm {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    border: solid 0.1px black;
+    border-radius: 10px;
+}
+
+.contentFilter #filterForm {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    border: solid 0.1px black;
+    border-radius: 10px;
+}
+
+.content #bedrijfsForm fieldset {
+    border: none;
+    width: 100%;
+}
+
+.contentFilter #filterForm fieldset {
+    border: none;
+    width: 100%;
+}
+
+.content #bedrijfsForm legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.550vw;
+    color: #FFD600;
+    font-family: 'Roboto', sans-serif;
+}
+
+label {
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 1.200vw;
+    color: #FFD600;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type=text], select, textarea {
+    border: 1px solid #525151;
+    display: block;
+    font-size: 1.1vw;
+    outline: 0;
+    padding: 3px;
+    width: 70%;
+    color: #5f5a5a;
+}
+
+.contentFilter #filterForm fieldset select {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.content #bedrijfsForm fieldset select {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.contentFilter #filterForm fieldset input[type=text] {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.content #bedrijfsForm fieldset input[type=text] {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.contentFilter #filterForm fieldset label {
+    margin-left: 5%;
+}
+
+.content #bedrijfsForm fieldset label {
+    margin-left: 5%;
+}
+
+.contentFilter #filterForm input[type=submit] {
+    margin-left: 5%;
+}
+
+.content #bedrijfsForm input[type=submit] {
+    margin-left: 5%;
+}
+
+.content #bedrijfsForm fieldset textarea {
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+.button {
+    border: none;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-size: 1.4vw;
+    font-weight: bold;
+    padding: 0.3em 4.5em;
+    width: auto;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+.cta-button {
+    background-color: #000000;
+    color: white;
+}
+
+.cta-button:hover {
+    background-color: #423838;
+}
+
+.message {
+	color: #777;
+	margin-bottom: 0;
+}
+
+.message--error {
+	display: none;
+    color: #c00;
+    font-family: 'Roboto Slab', serif;
+}
+
+.contentFilter #filterForm .message--error {
+    margin-left: 5%;
+}
+
+.content #bedrijfsForm .message--error {
+    margin-left: 5%;
+}
+
+.slidecontainer {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1; 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #FFD600;
+  cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FFD600;
+  cursor: pointer;
+}
+
+#displayed {
+    display: block;
+}
+
+main {
+    height: 100vh;
+}
+
+ul{
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0rem;
+    margin-inline-end: 0rem;
+    padding-inline-start: 4rem;
+    background-color: white;
+}
+
+ul li{
+    width: 90%;
+    border-bottom: black solid 1px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    padding-left: 0rem;
+}
+
+ul li a{
+    color: black;
+    margin: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-active{
+    transform: translateX(0%);
+    left: 0%;
+}
+
+.nav-links {
+    right: 100%;
+    top: 0vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    transition: transform 0.5s ease-in;
+    z-index: 100;
+    position: fixed;
+    padding: 0rem;
+}
+
+
+@media screen and (max-width: 864px) {
+    .content {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .content #bedrijfsForm legend {
+        font-size: 2.546vw;
+    }
+    label {
+        font-size: 2.1vw;
+    }
+    input[type=text], select, textarea {
+        width: 75%;
+        font-size: 1.852vw;
+    }
+    .button {
+        font-size: 2vw;
+    }
+    .contentFilter {
+        width: 60%;
+        margin-left: 20%;
+    }
+    main {
+        height: 100vh;
+    }
+    .nav-links {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .content #bedrijfsForm legend {
+        font-size: 4.400vw;
+    }
+    label {
+        font-size: 4vw;
+        margin-left: 5%;
+    }
+    input[type=text], select, textarea {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 3.200vw;
+        padding: 1px;
+    }
+    .button {
+        font-size: 4.400vw;
+        padding: 0.3em 2.5em;
+    }
+    .contentFilter {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .message--error {
+        margin-left: 5%;
+        font-size: 3.5vw;
+    }
+    main {
+        height: 100vh;
+    }
+    .nav-links {
+        width: 55%;
+    }
+}

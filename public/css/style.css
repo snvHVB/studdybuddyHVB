@@ -1,0 +1,99 @@
+/* standaart waarden */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html{
+    font-size: 0.625em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    margin: 1rem 0;
+}
+
+/* header */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw;
+}
+
+div.box {}
+
+div.hamburger {
+    width: 3.5rem;
+    height: 0.5rem;
+    background-color: #C4C4C4;
+    margin: 0.6rem 0;
+    cursor: pointer;
+}
+
+img.imgNav {
+    height: 5rem;
+    width: 5.25rem;
+}
+
+div#line {
+    margin-top: 1rem;
+    border: 0.1rem solid #E8E7E7;
+    filter: blur(0.4rem);
+}
+
+/* section titel */
+
+h4 {
+    display: none;
+}
+
+/* main */
+
+main {
+    min-height: 85vh;
+}
+
+/* footer */
+
+footer  {
+    min-height: 5vh;
+    background-color: #C4C4C4;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw;
+    margin: 1rem 0;
+}
+
+.box-left {
+    justify-content: center;
+    margin: 1rem;
+}
+
+.box-right {
+    justify-content: center;
+    margin: 1rem;
+}
+
+.social-media-icons {
+    font-size: 5rem;
+    padding-right: 2rem;
+}
+
+footer a{
+    color: black;
+}

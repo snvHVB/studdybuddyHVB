@@ -96,12 +96,12 @@
                         <span class="message message--error" id="errStudierichting">&nbsp;</span>
                         <br>
                         <div id="displayed">
-                            <label>Loon (in €)</label>
+                            <label>Loon (per uur in €)</label>
                             <input type="text" id="loon" value="" required />
                             <span class="message message--error" id="errLoon">&nbsp;</span>
                         </div>
                         <br>
-                        <label>Functie (de job die men gaan uitvoeren)</label>
+                        <label>Functie/Taak in het bedrijf</label>
                         <input type="text" id="functie" value="" required />
                         <span class="message message--error" id="errFunctie">&nbsp;</span>
                         <br>
@@ -109,6 +109,13 @@
                         <textarea rows="4" cols="50" name="beschrijvingJob" form="bedrijfsForm"
                             id="beschrijving"></textarea>
                         <span class="message message--error" id="errBeschrijving">&nbsp;</span>
+                        <br>
+                        <div class="imgBedrijf">
+                            <h4>Logo/Afbeelding van bedrijf</h4>
+                            <img src="img/default.PNG" alt="default" id="default">
+                            <input type="file" id="img-file"/>
+                        </div>
+                        <br>
                     </fieldset>
                     <br>
                     <br>
@@ -140,6 +147,7 @@
         </footer>
     </div>
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/addBedrijf.js"></script>
     <script src="js/Slider.js"></script>
 </body>

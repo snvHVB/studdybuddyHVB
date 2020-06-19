@@ -8,114 +8,139 @@
             e.preventDefault();
             e.stopPropagation();
 
-            var isValid = true;
+            let isValid = true;
 
             //errors
-            var errBedrijfsnaam = document.getElementById('errBedrijfsnaam');
-            var errLocatie = document.getElementById('errLocatie');
-            var errSoortVacature = document.getElementById('errSoortVacature');
-            var errStudierichting = document.getElementById('errStudierichting');
-            var errBeschrijving = document.getElementById('errBeschrijving');
-            var errLoon = document.getElementById('errLoon');
-            var errFunctie = document.getElementById('errFunctie');
+            let errBedrijfsnaam = document.getElementById('errBedrijfsnaam');
+            let errLocatie = document.getElementById('errLocatie');
+            let errSoortVacature = document.getElementById('errSoortVacature');
+            let errStudierichting = document.getElementById('errStudierichting');
+            let errBeschrijving = document.getElementById('errBeschrijving');
+            let errLoon = document.getElementById('errLoon');
+            let errFunctie = document.getElementById('errFunctie');
 
             //inputs
-            var bedrijfsnaam = document.getElementById('bedrijfsnaam');
-            var locatie = document.getElementById('locatie');
-            var soortVacature = document.getElementById('soortVacature');
-            var studierichting = document.getElementById('studierichting');
-            var beschrijving = document.getElementById('beschrijving');
-            var loon = document.getElementById('loon');
-            var functie = document.getElementById('functie');
+            let bedrijfsnaam = document.getElementById('bedrijfsnaam');
+            let locatie = document.getElementById('locatie');
+            let soortVacature = document.getElementById('soortVacature');
+            let studierichting = document.getElementById('studierichting');
+            let beschrijving = document.getElementById('beschrijving');
+            let loon = document.getElementById('loon');
+            let functie = document.getElementById('functie');
 
-            if (bedrijfsnaam.value == '') {
+            if (bedrijfsnaam.value === '') {
                 isValid = false;
                 errBedrijfsnaam.innerHTML = 'gelieve een bedrijfsnaam in te vullen';
                 errBedrijfsnaam.style.display = 'block';
             }
-            if (locatie.value == '') {
+            if (locatie.value === '') {
                 isValid = false;
                 errLocatie.innerHTML = 'gelieve de locatie van het bedrijf in te vullen';
                 errLocatie.style.display = 'block';
             }
-            if (soortVacature.value == '') {
+            if (soortVacature.value === '') {
                 isValid = false;
                 errSoortVacature.innerHTML = 'gelieve een soort vacature te kiezen';
                 errSoortVacature.style.display = 'block';
             }
-            if (studierichting.value == '') {
+            if (studierichting.value === '') {
                 isValid = false;
                 errStudierichting.innerHTML = 'gelieve een studierichting te kiezen';
                 errStudierichting.style.display = 'block';
             }
-            if (beschrijving.value == '') {
+            if (beschrijving.value === '') {
                 isValid = false;
                 errBeschrijving.innerHTML = 'gelieve een beschrijving te geven van de job';
                 errBeschrijving.style.display = 'block';
             }
-            if (functie.value == '') {
+            if (functie.value === '') {
                 isValid = false;
                 errFunctie.innerHTML = 'gelieve een functie voor de werkzoekende te geven';
                 errFunctie.style.display = 'block';
             }
-            if (loon.value == '') {
-                if (loon.style.display == 'block') {
+            if (loon.value === '') {
+                if (loon.style.display === 'block') {
                     isValid = false;
                     errLoon.innerHTML = 'gelieve een loon in te vullen'
                     errLoon.style.display = 'block';
                 }
             }
 
-            if (isValid == true) {
-                let data = {
-                    "records": [{
-                        "fields": {
-                            "Bedrijfsnaam": bedrijfsnaam.value,
-                            "Locatie": locatie.value,
-                            "Soort vacature": soortVacature.value,
-                            "Studierichting": studierichting.value,
-                            "Initialen": getInitialen(bedrijfsnaam.value),
-                            "Loon": loon.value,
-                            "Functie": functie.value,
-                            "Beschrijving": beschrijving.value
-                        }
-                    }]
-                };
-                console.log(data);
-                fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/Bedrijf%20toevoegen', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer keynkmrJqU35kttvZ',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                    .then(response => response.json())
-                    .then(() => alert("De job is succesvol toegevoegd aan onze website"))
+            if (isValid === true) {
+                const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dt3xaog16/upload';
+                const CLOUDINARY_UPLOAD_PRESET = 'gfsdo9c0';
+                const imgFile = document.getElementById('img-file');
+                    let file = imgFile.files[0];
+                    console.log(file);
+                    let formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+                    axios({
+                        url: CLOUDINARY_URL,
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-from-urlencoded'
+                        },
+                        data: formData
+                    }).then(function (res) {
+                        console.log(res);
+                        let cloudinaryimg = res.data.secure_url;
+                        document.getElementById('default').src = cloudinaryimg;
+                        document.getElementById('default').style.width = "40%";
+                        let data = {
+                            "records": [{
+                                "fields": {
+                                    "Bedrijfsnaam": bedrijfsnaam.value,
+                                    "Locatie": locatie.value,
+                                    "Soort vacature": soortVacature.value,
+                                    "Studierichting": studierichting.value,
+                                    "img": cloudinaryimg,
+                                    "Loon": loon.value,
+                                    "Functie": functie.value,
+                                    "Beschrijving": beschrijving.value,
+                                    "boolean": 'false'
+                                }
+                            }]
+                        };
+                        console.log(data);
+                        fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/Bedrijf%20toevoegen', {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': 'Bearer keynkmrJqU35kttvZ',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                            .then(response => response.json())
+                            .then(() => alert("De job is succesvol toegevoegd aan onze website"))
+                    }).catch(function (err) {
+                        console.error(err);
+                    });
             } else {
                 window.scrollTo(0, 0);
             }
         });
     });
 
-    function getInitialen(naam) {
-        var up = "";
+    function getInitialen(naam) { //vervangen door een "img"
+        let up = "";
 
         for (let j = 0; j < naam.length; j++) {
-            if (naam.charAt(j) == ' ' || naam.charAt(j) == '-' || naam.charAt(j) == '.' || naam.charAt(j) == '&') {
+            if (naam.charAt(j) === ' ' || naam.charAt(j) === '-' || naam.charAt(j) === '.' || naam.charAt(j) === '&') {
                 naam = naam.replace(naam.charAt(j), "");
             }
         }
 
         for (let i = 0; i < naam.length; i++) {
-            var char = naam.charAt(i);
-            if (char == char.toUpperCase()) {
+            let char = naam.charAt(i);
+            if (char === char.toUpperCase()) {
                 up = up + char;
             }
         }
 
-        if (up == "") {
-            var letters = naam.substring(0, 3);
+        if (up === "") {
+            let letters = naam.substring(0, 3);
             for (let i = 0; i < letters.length; i++) {
                 up = up + letters.charAt(i).toUpperCase();
             }
@@ -128,7 +153,8 @@
     }
 
     document.getElementById('soortVacature').addEventListener('change', function () {
-        if (soortVacature.value == 'Stages') {
+        let soortVacature = document.getElementById('soortVacature');
+        if (soortVacature.value === 'Stages') {
             document.getElementById('displayed').style.display = 'none';
         }else{
             document.getElementById('displayed').style.display = 'block';

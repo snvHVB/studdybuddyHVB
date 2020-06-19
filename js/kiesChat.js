@@ -16,36 +16,35 @@ fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/berichten', {
 
 function getInfo(records) {
 
-    let laatstemessageID = 0;
-
+    let laatsteBericht = records.length - 1;
     for (let i = 0; i < records.length; i++) {
-
         let is_ID = records[i].fields.ID;
         if (is_ID === 'USER_TEST') {
 
-            if (laatstemessageID < records[i].fields.messageID) {
-                laatstemessageID = records[i].fields.messageID;
-                laatstemessageID--;
-                naam = records[laatstemessageID].fields.naam;
-                foto = records[laatstemessageID].fields.img;
-                message = records[laatstemessageID].fields.bericht;
-                time = records[laatstemessageID].fields.tijd;
-            }
+            naam = records[laatsteBericht].fields.naam;
+            foto = records[laatsteBericht].fields.img;
+            message = records[laatsteBericht].fields.bericht;
+            time = records[laatsteBericht].fields.tijd;
+
 
         }
-    }
 
+    }
     let bericht = document.createElement('a');
     bericht.href = "chatpage.html"
     bericht.innerHTML =
         '<div class="container">' +
-        '<img src="' + foto + '" alt="Avatar">' +
-        '<span>' + naam + '</span>' +
+        '<img src="img/carrefour.jpg" alt="Avatar">' +
+        '<span>Carrefour Ertevelde</span>' +
         '<p>' + message + '</p>' +
         '<span class="time-right">' + time + '</span>' +
         '</div>';
     document.getElementById('gesprekken').appendChild(bericht);
 }
+
+
+
+
 
 
 

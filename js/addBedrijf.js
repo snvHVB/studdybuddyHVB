@@ -67,39 +67,63 @@
             }
 
             if (isValid === true) {
-                let data = {
-                    "records": [{
-                        "fields": {
-                            "Bedrijfsnaam": bedrijfsnaam.value,
-                            "Locatie": locatie.value,
-                            "Soort vacature": soortVacature.value,
-                            "Studierichting": studierichting.value,
-                            "Initialen": getInitialen(bedrijfsnaam.value),
-                            "Loon": loon.value,
-                            "Functie": functie.value,
-                            "Beschrijving": beschrijving.value,
-                            "Aangenomen": 'false'
-                        }
-                    }]
-                };
-                console.log(data);
-                fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/Bedrijf%20toevoegen', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer keynkmrJqU35kttvZ',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                    .then(response => response.json())
-                    .then(() => alert("De job is succesvol toegevoegd aan onze website"))
+                const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dt3xaog16/upload';
+                const CLOUDINARY_UPLOAD_PRESET = 'gfsdo9c0';
+                const imgFile = document.getElementById('img-file');
+                    let file = imgFile.files[0];
+                    console.log(file);
+                    let formData = new FormData();
+                    formData.append('file', file);
+                    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+                    axios({
+                        url: CLOUDINARY_URL,
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-from-urlencoded'
+                        },
+                        data: formData
+                    }).then(function (res) {
+                        console.log(res);
+                        let cloudinaryimg = res.data.secure_url;
+                        document.getElementById('default').src = cloudinaryimg;
+                        document.getElementById('default').style.width = "40%";
+                        let data = {
+                            "records": [{
+                                "fields": {
+                                    "Bedrijfsnaam": bedrijfsnaam.value,
+                                    "Locatie": locatie.value,
+                                    "Soort vacature": soortVacature.value,
+                                    "Studierichting": studierichting.value,
+                                    "img": cloudinaryimg,
+                                    "Loon": loon.value,
+                                    "Functie": functie.value,
+                                    "Beschrijving": beschrijving.value,
+                                    "boolean": 'false'
+                                }
+                            }]
+                        };
+                        console.log(data);
+                        fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/Bedrijf%20toevoegen', {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': 'Bearer keynkmrJqU35kttvZ',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                            .then(response => response.json())
+                            .then(() => alert("De job is succesvol toegevoegd aan onze website"))
+                    }).catch(function (err) {
+                        console.error(err);
+                    });
             } else {
                 window.scrollTo(0, 0);
             }
         });
     });
 
-    function getInitialen(naam) {
+    function getInitialen(naam) { //vervangen door een "img"
         let up = "";
 
         for (let j = 0; j < naam.length; j++) {

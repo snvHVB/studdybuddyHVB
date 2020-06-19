@@ -75,10 +75,10 @@
                             "Soort vacature": soortVacature.value,
                             "Studierichting": studierichting.value,
                             "Initialen": getInitialen(bedrijfsnaam.value),
-                            "Loon": loon.value.toString(),
+                            "Loon": loon.value,
                             "Functie": functie.value,
                             "Beschrijving": beschrijving.value,
-                            "boolean": false
+                            "boolean": 'false'
                         }
                     }]
                 };

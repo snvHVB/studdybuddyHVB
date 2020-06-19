@@ -78,7 +78,7 @@
                             "Loon": loon.value,
                             "Functie": functie.value,
                             "Beschrijving": beschrijving.value,
-                            "boolean": 'false'
+                            "Aangenomen": 'false'
                         }
                     }]
                 };

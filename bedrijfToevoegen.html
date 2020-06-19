@@ -96,7 +96,7 @@
                         <span class="message message--error" id="errStudierichting">&nbsp;</span>
                         <br>
                         <div id="displayed">
-                            <label>Loon (in €)</label>
+                            <label>Loon (per uur in €)</label>
                             <input type="text" id="loon" value="" required />
                             <span class="message message--error" id="errLoon">&nbsp;</span>
                         </div>
@@ -109,6 +109,16 @@
                         <textarea rows="4" cols="50" name="beschrijvingJob" form="bedrijfsForm"
                             id="beschrijving"></textarea>
                         <span class="message message--error" id="errBeschrijving">&nbsp;</span>
+                        <br>
+                        <div>
+                            <h4>Logo/Afbeelding van bedrijf</h4>
+                            <img src="" alt="profiel foto" id="profielFoto">
+                            <input type="file" id="img-file" hidden="hidden"/>
+                        </div>
+                        <div>
+                            <button type="button" id="add-profiel-img">+</button>
+                        </div>
+                        <br>
                     </fieldset>
                     <br>
                     <br>

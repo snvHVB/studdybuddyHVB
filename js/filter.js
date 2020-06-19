@@ -94,8 +94,8 @@
                     let records = data.records
                     let locaties = new Array();
                     for (let i = 0; i < records.length; i++) {
-                        if (!(locaties.includes(records[i].fields.locatie))) {
-                            locaties.push(records[i].fields.locatie);
+                        if (!(locaties.includes(records[i].fields.Locatie))) {
+                            locaties.push(records[i].fields.Locatie);
                         }
                     }
                     console.log(locaties);

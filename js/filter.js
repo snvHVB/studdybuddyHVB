@@ -98,7 +98,13 @@
                             locaties.push(records[i].fields.Locatie);
                         }
                     }
-                    console.log(locaties);
+
+                    for (let j = 0; j < locaties.length; j++) {
+                        let selectLocatie = document.getElementById('keuzeLocatie');
+                        let option = document.createElement("option");
+                        option.text = locaties[j];
+                        selectLocatie.add(option);
+                    }
                 });
         }
     });

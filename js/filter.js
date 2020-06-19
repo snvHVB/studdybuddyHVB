@@ -31,28 +31,28 @@
             let zoekradius = document.getElementById('output');
             let minimumLoon = document.getElementById('minimumLoon');
 
-            if (studierichting.value == '') {
+            if (studierichting.value === '') {
                 isValid = false;
                 errStudierichting.innerHTML = 'gelieve een studierichting te kiezen';
                 errStudierichting.style.display = 'block';
             }
-            if (keuzeLocatie.value == '') {
+            if (keuzeLocatie.value === '') {
                 isValid = false;
                 errKeuzeLocatie.innerHTML = 'gelieve een locatie te kiezen';
                 errKeuzeLocatie.style.display = 'block';
             }
-            if (vacature.value == '') {
+            if (vacature.value === '') {
                 isValid = false;
                 errVacature.innerHTML = 'gelieve een vacature te kiezen';
                 errVacature.style.display = 'block';
             }
-            if (minimumLoon.value == '') {
+            if (minimumLoon.value === '') {
                 isValid = false;
                 errMinimumLoon.innerHTML = 'gelieve een minimum loon te geven';
                 errMinimumLoon.style.display = 'block';
             }
 
-            if (isValid == false) {
+            if (isValid === false) {
                 window.scrollTo(0, 0);
             }else{
                 let data = {

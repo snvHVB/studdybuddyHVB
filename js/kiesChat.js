@@ -34,8 +34,8 @@ function getInfo(records) {
     bericht.href = "chatpage.html"
     bericht.innerHTML =
         '<div class="container">' +
-        '<img src="' + foto + '" alt="Avatar">' +
-        '<span>' + naam + '</span>' +
+        '<img src="img/carrefour.jpg" alt="Avatar">' +
+        '<span>Carrefour Ertevelde</span>' +
         '<p>' + message + '</p>' +
         '<span class="time-right">' + time + '</span>' +
         '</div>';

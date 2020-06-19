@@ -2,6 +2,7 @@
 let bedrijf = new Array();
 let functie = new Array();
 let locatie = new Array();
+let foto = new Array();
 let velden2;
 let locatieFilter;
 let teller2 = 0;
@@ -32,7 +33,7 @@ fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/Filteren' , {
 
 document.getElementById('kruis').addEventListener("click", function(){
     let imgReplace = document.getElementsByClassName("foto2")[0];
-    imgReplace.src = "img/fototoevoegen.png";
+    imgReplace.src = foto[teller2];
     document.getElementById('bedrijfsnaam').innerHTML = bedrijf[teller2];
     document.getElementById('funtie').innerHTML = functie[teller2];
     document.getElementById('locatie').innerHTML = locatie[teller2];
@@ -61,7 +62,7 @@ document.getElementById('kruis').addEventListener("click", function(){
 
 document.getElementById('hart').addEventListener('click', function(){
     let imgReplace = document.getElementsByClassName("foto2")[0];
-    imgReplace.src = "img/fototoevoegen.png";
+    imgReplace.src = foto[teller2];
     document.getElementById('bedrijfsnaam').innerHTML = bedrijf[teller2];
     document.getElementById('funtie').innerHTML = functie[teller2];
     document.getElementById('locatie').innerHTML = locatie[teller2];
@@ -96,6 +97,7 @@ function opvullen(velden){
             bedrijf[teller] = velden[i].fields.Bedrijfsnaam;
             functie[teller] = velden[i].fields.Functie;
             locatie[teller] = velden[i].fields.Locatie;
+            foto[teller] = velden[i].fields.img;
             teller++;
         }
     }

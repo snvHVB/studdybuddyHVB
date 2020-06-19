@@ -91,7 +91,14 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+                    let records = data.records
+                    let locaties = new Array();
+                    for (let i = 0; i < records.length; i++) {
+                        if (!(locaties.includes(records[i].fields.locatie))) {
+                            locaties.push(records[i].fields.locatie);
+                        }
+                    }
+                    console.log(locaties);
                 });
         }
     });

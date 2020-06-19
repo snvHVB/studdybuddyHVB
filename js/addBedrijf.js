@@ -75,7 +75,7 @@
                             "Soort vacature": soortVacature.value,
                             "Studierichting": studierichting.value,
                             "Initialen": getInitialen(bedrijfsnaam.value),
-                            "Loon": parseInt(loon.value),
+                            "Loon": loon.value.toString(),
                             "Functie": functie.value,
                             "Beschrijving": beschrijving.value,
                             "boolean": false

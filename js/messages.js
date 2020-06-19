@@ -1,4 +1,9 @@
-document.getElementById('sender').addEventListener("click", function () {
+let name;
+let img;
+let tijd;
+let bericht;
+
+    document.getElementById('sender').addEventListener("click", function () {
 
 
     fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/profiel', {
@@ -16,8 +21,8 @@ document.getElementById('sender').addEventListener("click", function () {
         for (let i = 0; i < records.length; i++) {
             let is_ID = records[i].fields.ID;
             if (is_ID === 'USER_TEST') {
-                let naam = records[i].fields.naam;
-                let img = records[i].fields.img;
+                name = records[i].fields.naam;
+                img = records[i].fields.img;
 
 
                 let datum = new Date();
@@ -26,9 +31,9 @@ document.getElementById('sender').addEventListener("click", function () {
                 if (minuten < 10) {
                     minuten = '0' + minuten;
                 }
-                let tijd = uren + ':' + minuten;
+                tijd = uren + ':' + minuten;
 
-                let bericht = document.getElementById('berichtSturen').value
+                bericht = document.getElementById('berichtSturen').value
 
                 tijd = tijd.toString();
 
@@ -89,20 +94,19 @@ function getInfo(records) {
         }
     message_ID = message_ID.sort(function(a, b){return a - b});
 
-    for (k = 0; k < records.length; k++){
-        naam = records[message_ID[k]-1].fields.naam;
-        foto = records[message_ID[k]-1].fields.img;
-        message = records[message_ID[k]-1].fields.bericht;
-        time = records[message_ID[k]-1].fields.tijd;
+    for (let k = 0; k < records.length; k++){
+        name = records[message_ID[k]-1].fields.naam;
+        img = records[message_ID[k]-1].fields.img;
+        bericht = records[message_ID[k]-1].fields.bericht;
+        tijd = records[message_ID[k]-1].fields.tijd;
+
+        let div = document.createElement('div');
+        div.innerHTML = '<img src="' + img + '" alt="Avatar">' +
+            '<span>' + name + '</span>' +
+            '<p>' + bericht + '</p>' +
+            '<span class="time-right">' + tijd + '</span>';
+        div.className = 'container darker';
+        document.getElementById('berichten').appendChild(div);
     }
-
-
-    let div = document.createElement('div');
-    div.innerHTML = '<img src="' + foto + '" alt="Avatar">' +
-        '<span>' + naam + '</span>' +
-        '<p>' + message + '</p>' +
-        '<span class="time-right">' + time + '</span>';
-    div.className = 'container darker';
-    document.getElementById('berichten').appendChild(div);
     }
 

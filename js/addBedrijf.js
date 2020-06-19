@@ -59,7 +59,7 @@
                 errFunctie.style.display = 'block';
             }
             if (loon.value === '') {
-                if (loon.style.display == 'block') {
+                if (loon.style.display === 'block') {
                     isValid = false;
                     errLoon.innerHTML = 'gelieve een loon in te vullen'
                     errLoon.style.display = 'block';
@@ -75,7 +75,7 @@
                             "Soort vacature": soortVacature.value,
                             "Studierichting": studierichting.value,
                             "Initialen": getInitialen(bedrijfsnaam.value),
-                            "Loon": loon.value,
+                            "Loon": parseInt(loon.value),
                             "Functie": functie.value,
                             "Beschrijving": beschrijving.value,
                             "boolean": false
@@ -129,7 +129,8 @@
     }
 
     document.getElementById('soortVacature').addEventListener('change', function () {
-        if (soortVacature.value == 'Stages') {
+        let soortVacature = document.getElementById('soortVacature');
+        if (soortVacature.value === 'Stages') {
             document.getElementById('displayed').style.display = 'none';
         }else{
             document.getElementById('displayed').style.display = 'block';

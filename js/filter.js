@@ -12,6 +12,8 @@
             output.innerHTML = this.value + "km";
         }
 
+        locaties();
+
         document.getElementById('filterForm').addEventListener('submit', function (e) {
             e.preventDefault();
             e.stopPropagation();
@@ -80,5 +82,17 @@
                     .then(() => alert("De aangeboden jobs zijn nu gefilterd"))
             }
         });
+
+        function locaties() {
+            fetch('https://api.airtable.com/v0/app5skk11zC7IPHsf/Bedrijf%20toevoegen', {
+                headers: {
+                    Authorization: 'Bearer keynkmrJqU35kttvZ'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                });
+        }
     });
 })();

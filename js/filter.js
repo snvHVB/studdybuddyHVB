@@ -5,8 +5,8 @@
         document.getElementById('filterForm').setAttribute('novalidate', 'novalidate');
 
         //slider
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("output");
+        let slider = document.getElementById("myRange");
+        let output = document.getElementById("output");
         output.innerHTML = slider.value + "km";
         slider.oninput = function () {
             output.innerHTML = this.value + "km";
@@ -16,20 +16,20 @@
             e.preventDefault();
             e.stopPropagation();
 
-            var isValid = true;
+            let isValid = true;
 
             //errors
-            var errStudierichting = document.getElementById('errStudierichting');
-            var errKeuzeLocatie = document.getElementById('errKeuzeLocatie');
-            var errVacature = document.getElementById('errVacature');
-            var errMinimumLoon = document.getElementById('errMinimumLoon');
+            let errStudierichting = document.getElementById('errStudierichting');
+            let errKeuzeLocatie = document.getElementById('errKeuzeLocatie');
+            let errVacature = document.getElementById('errVacature');
+            let errMinimumLoon = document.getElementById('errMinimumLoon');
 
             //inputs
-            var studierichting = document.getElementById('studierichting');
-            var keuzeLocatie = document.getElementById('keuzeLocatie');
-            var vacature = document.getElementById('vacature');
-            var zoekradius = document.getElementById('output');
-            var minimumLoon = document.getElementById('minimumLoon');
+            let studierichting = document.getElementById('studierichting');
+            let keuzeLocatie = document.getElementById('keuzeLocatie');
+            let vacature = document.getElementById('vacature');
+            let zoekradius = document.getElementById('output');
+            let minimumLoon = document.getElementById('minimumLoon');
 
             if (studierichting.value == '') {
                 isValid = false;

@@ -8,25 +8,25 @@
             e.preventDefault();
             e.stopPropagation();
 
-            var isValid = true;
+            let isValid = true;
 
             //errors
-            var errBedrijfsnaam = document.getElementById('errBedrijfsnaam');
-            var errLocatie = document.getElementById('errLocatie');
-            var errSoortVacature = document.getElementById('errSoortVacature');
-            var errStudierichting = document.getElementById('errStudierichting');
-            var errBeschrijving = document.getElementById('errBeschrijving');
-            var errLoon = document.getElementById('errLoon');
-            var errFunctie = document.getElementById('errFunctie');
+            let errBedrijfsnaam = document.getElementById('errBedrijfsnaam');
+            let errLocatie = document.getElementById('errLocatie');
+            let errSoortVacature = document.getElementById('errSoortVacature');
+            let errStudierichting = document.getElementById('errStudierichting');
+            let errBeschrijving = document.getElementById('errBeschrijving');
+            let errLoon = document.getElementById('errLoon');
+            let errFunctie = document.getElementById('errFunctie');
 
             //inputs
-            var bedrijfsnaam = document.getElementById('bedrijfsnaam');
-            var locatie = document.getElementById('locatie');
-            var soortVacature = document.getElementById('soortVacature');
-            var studierichting = document.getElementById('studierichting');
-            var beschrijving = document.getElementById('beschrijving');
-            var loon = document.getElementById('loon');
-            var functie = document.getElementById('functie');
+            let bedrijfsnaam = document.getElementById('bedrijfsnaam');
+            let locatie = document.getElementById('locatie');
+            let soortVacature = document.getElementById('soortVacature');
+            let studierichting = document.getElementById('studierichting');
+            let beschrijving = document.getElementById('beschrijving');
+            let loon = document.getElementById('loon');
+            let functie = document.getElementById('functie');
 
             if (bedrijfsnaam.value == '') {
                 isValid = false;
@@ -99,7 +99,7 @@
     });
 
     function getInitialen(naam) {
-        var up = "";
+        let up = "";
 
         for (let j = 0; j < naam.length; j++) {
             if (naam.charAt(j) == ' ' || naam.charAt(j) == '-' || naam.charAt(j) == '.' || naam.charAt(j) == '&') {
@@ -108,14 +108,14 @@
         }
 
         for (let i = 0; i < naam.length; i++) {
-            var char = naam.charAt(i);
+            let char = naam.charAt(i);
             if (char == char.toUpperCase()) {
                 up = up + char;
             }
         }
 
         if (up == "") {
-            var letters = naam.substring(0, 3);
+            let letters = naam.substring(0, 3);
             for (let i = 0; i < letters.length; i++) {
                 up = up + letters.charAt(i).toUpperCase();
             }

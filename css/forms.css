@@ -200,7 +200,7 @@ input[type=submit] {
 }
 
 main {
-    height: 100vh;
+    height: 120vh;
 }
 
 ul{
@@ -245,6 +245,10 @@ ul li a{
     z-index: 100;
     position: fixed;
     padding: 0rem;
+}
+
+.imgBedrijf {
+    width: 60%;
 }
 
 
